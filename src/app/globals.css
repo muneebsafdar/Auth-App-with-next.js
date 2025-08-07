@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+
+@layer utilities {
+  input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #374151 inset !important; /* Tailwind's bg-gray-700 */
+    -webkit-text-fill-color: #d1fae5 !important; /* Tailwind's text-green-100 */
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
