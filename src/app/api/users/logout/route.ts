@@ -8,7 +8,7 @@ export async function GET() {
         )
         response.cookies.set('token',"",{httpOnly:true,expires: new Date(0)})
         return response
-    } catch (error) {
-        return NextResponse.json({error:"Something went wrong while clearing the token"},{status:500})
+    } catch (error:any) {
+        return NextResponse.json({error:`Something went wrong while clearing the token ${error}`},{status:500})
     }
 }

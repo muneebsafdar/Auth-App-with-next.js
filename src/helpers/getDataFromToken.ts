@@ -1,6 +1,5 @@
 import { NextRequest } from "next/server";
 import jwt from'jsonwebtoken'
-import { log } from "node:console";
 
 export const getDataFromToken=(request:NextRequest)=>{
 
