@@ -18,19 +18,25 @@ export async function POST(request:NextRequest){
  
      if(!user){
          return NextResponse.json(
-                        {error:"User doesnt exists"},
-                        {status:400}
-                    )
+            {error:"User doesnt exists"},
+            {status:400}
+        )
      }
  
+     if(!user.isVerified){
+         return NextResponse.json(
+            {error:"User is not verified"},
+            {status:400}
+        )
+     }
  
      const isValidatePassword = await bcrypt.compare(password,user.password)
  
      if(!isValidatePassword){
          return NextResponse.json(
-                        {error:"Wrong credentials"},
-                        {status:400}
-                    )
+            {error:"Wrong credentials"},
+            {status:400}
+        )
      }
 
 

@@ -32,8 +32,7 @@ function Login(){
         } catch (error:any) {
 
             console.log("Login Error:",error.message)
-
-            toast.error('Something went wrong.')
+            toast.error('Something went wrong or the user in not verified')
 
         }finally{
           setLoading(false)

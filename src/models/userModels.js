@@ -26,11 +26,16 @@ const userSchema = new Schema({
     isAdmin:{
         type:Boolean,
         default:false
-    }
+    },
 
+    verifyToken:String,
+    verifyTokenExpiry:Date,
+    forgotPasswordToken:String,
+    forgotPasswordTokenExpiry:Date
 })
 
 
-const User= mongoose.models.users || mongoose.model('User',userSchema)
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+
 
 export default User
